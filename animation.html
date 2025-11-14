@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Catch My Heart — Niha</title>
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <!-- external css -->
+  <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <div class="game-wrapper">
+    <header class="game-header">
+      <div class="logo">Niha</div>
+      <h1 class="game-title">Catch My Heart 💖</h1>
+    </header>
+
+    <main class="game-main">
+      <div class="canvas-wrap">
+        <canvas id="heartCanvas"  aria-label="Catch the falling hearts"></canvas>
+        <div id="overlayMessage" class="overlay hidden"></div>
+      </div>
+
+      <div class="hud">
+        <div class="scorebox">Score: <span id="score">0</span></div>
+        <div class="missbox">Missed: <span id="missed">0</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="btn">Start</button>
+        <button id="pauseBtn" class="btn">Pause</button>
+        <button id="restartBtn" class="btn">Restart</button>
+        <button id="musicBtn" class="btn">Play Music</button>
+      </div>
+
+      <p class="back"><a href="home.html">← Back</a></p>
+    </main>
+
+    <!-- hidden audio element (place your file at audio/love.mp3) -->
+    <audio id="bgMusic" src="song/Ruth B Dandelions.mp3" loop preload="metadata"></audio>
+  </div>
+
+  <!-- external js -->
+  <script src="js/game.js"></script>
+</body>
+</html>

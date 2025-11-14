@@ -1,0 +1,212 @@
+   :root{
+  --maroon:#6e0f0f;
+  --maroon-2:#8b1515;
+  --gold:#aa8b24;
+  --black: black;
+  --muted: rgba(255,255,255,0.85);
+  --cursive: "Dancing Script", cursive;
+}
+
+/* Page layout */
+*{box-sizing:border-box}
+html,body{
+  height:125%;
+  margin:0;
+  background:linear-gradient(180deg,var(--black), rgb(107, 3, 3));
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased
+}
+
+.game-wrapper{
+  min-height:50vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  gap:14px
+}
+
+/* Header */
+.game-header{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px}
+
+.logo{
+  font-family:var(--cursive);
+  font-size:22px;
+  color:var(--gold);
+  background:linear-gradient(90deg,var(--maroon),var(--maroon-2));
+  padding:8px 14px;border-radius:999px;
+  box-shadow:0 8px 24px rgba(139,21,21,0.35)
+}
+
+.game-title{
+  font-family:var(--cursive);
+  font-size:34px;
+  margin:0;
+  color:#ffdfe6;
+  text-shadow:0 6px 30px rgba(139,21,21,0.22)}
+
+/* Main area */
+.game-main{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  width:400px;
+  max-width:520px;
+  height: 150px;
+  margin-bottom: 50px;
+
+  
+}
+
+.canvas-wrap{
+  position:relative;
+  
+}
+
+canvas{
+  width:100px;
+  height: 100%;
+  max-width:520px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+  border-radius:12px;
+  border:3px solid rgba(110,15,15,0.25);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  display:block}
+
+/* overlay message */
+.overlay{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  padding:18px 22px;
+  border-radius:12px;
+  background:linear-gradient(90deg, rgba(110,15,15,0.92), rgba(30,0,0,0.9));
+  color:#fff;
+  font-family:var(--cursive);
+  font-size:18px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+  text-align:center
+}
+
+.overlay.hidden{
+  display:none
+}
+
+/* HUD */
+.hud{
+  display:flex;
+  gap:12px;
+  align-items:center
+}
+
+.scorebox,.missbox{
+  background:linear-gradient(90deg,var(--maroon),
+  var(--maroon-2));padding:8px 12px;
+  border-radius:10px;color:#fff;
+  font-family:var(--cursive);
+  font-size:16px;
+  box-shadow:0 6px 20px rgba(110,15,15,0.25)
+
+  text-decoration none;
+  color: white;
+  background: linear-gradient(135deg, #800000, #000000);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(128, 0, 0, 0.5);
+  display: inline-block;
+}
+
+  
+/* Controls */
+.controls{
+  display:flex;gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:6px
+}
+
+.btn{
+  background:linear-gradient(90deg,var(--maroon),
+  var(--maroon-2));
+  color:#fff;
+  border:none;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-family:var(--cursive);
+  box-shadow:0 8px 24px rgba(94, 6, 6, 0.2);
+  transition:transform .18s ease
+
+  text-decoration none;
+  color: white;
+  background: linear-gradient(135deg, #800000, #000000);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(128, 0, 0, 0.5);
+  display: inline-block;
+}
+.btn:hover{
+  transform:translateY(-6px)
+  transform scale(1.05);
+  background: linear-gradient(135deg, #000000, #800000);
+  box-shadow: 0 6px 20px rgba(128, 0, 0, 0.7);
+}
+
+
+
+.back{
+  margin-top:6px
+}
+
+.back a{
+  color:var(--muted);
+  text-decoration:none;
+  font-family:var(--cursive);
+  font-size:16px}
+
+
+  .back {
+  text-align: left; /* aligns left of the page */
+  margin: 20px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.back a {
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #800000, #000000);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(128, 0, 0, 0.5);
+  display: inline-block;
+}
+
+.back a:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #000000, #800000);
+  box-shadow: 0 6px 20px rgba(128, 0, 0, 0.7);
+}
+
+
+/* small screens */
+@media (max-width:320px){
+  .game-title{font-size:28px}
+  .hud{flex-direction:column;gap:6px}
+  .controls{gap:8px}
+}
+
+
